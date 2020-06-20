@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { CardsComponent } from './cards/cards.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
+import { ButtonFormComponent } from './form-elements/button-form/button-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationFormComponent
+    RegistrationFormComponent,
+    ButtonFormComponent
   ],
   imports: [
     BrowserModule,
