@@ -1,0 +1,93 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+
+  &-field {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 25px 0;
+  }
+  &-label {
+    font-weight: 700;
+  }
+  &-input {
+    height: 35px;
+    font-size: 16px;
+    margin: 6px 0 0 0;
+    border: 1px #11057b8a solid;
+    color: #11057b;
+    background-color: #f4f4f4;
+    &:hover {
+      border: 1px #11057b solid;
+    }
+    &:focus {
+      outline:none;
+      border: 1px #11057b solid;
+      background-color: #ffffff;
+    }
+    &::-webkit-input-placeholder {
+      color: rgba(17, 5, 123, 0.31);
+    }
+    &:focus::-webkit-input-placeholder {
+      color: white;
+    }
+  }
+  &-button {
+    height: 70px;
+    box-shadow: 2px 1px 10px #494097;
+    background-color: blue;
+    border: 1px #11057b solid;
+    border-radius: 10px;
+    margin: 11px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 2px 1px 20px #494097;
+      background-color: #0000ffad;
+      border: 1px #11057b solid;
+    }
+    &:focus {
+      outline:none;
+    }
+  }
+  &-validation {
+    display: none;
+  }
+}
+
+// MODIFY CLASS
+//input
+.error-input {
+  margin-bottom: 0;
+  input {
+    background-color: rgba(244, 0, 6, 0.26);
+  }
+  p {
+    display: block;
+    margin: 2px 0 9px 0;
+    font-size: 12px;
+    color: red;
+    cursor: default;
+  }
+}
+
+//button
+.disabled-btn {
+  background-color: rgba(0, 0, 255, 0.5);
+  box-shadow: none;
+  cursor: not-allowed;
+  &:hover {
+    background-color: rgba(0, 0, 255, 0.5);
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+}
+
+
+
+
+

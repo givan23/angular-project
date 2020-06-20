@@ -1,0 +1,45 @@
+.record {
+  position: absolute;
+  width: 500px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  border: 6px #0000004f solid;
+  border-radius: 8px;
+  margin: -202px 0 100px -260px;
+  padding: 15px;
+  color: #11057b;
+  font-family: 'Roboto', sans-serif;
+
+  &-privacy,
+  &-back {
+    font-weight: 700;
+    color: rgba(17, 5, 176, 0.6);
+    cursor: pointer;
+    &:hover {
+      color: #11057b;
+    }
+  }
+
+  &-title {
+    font-size: 25px;
+    font-weight: 700;
+    cursor: default;
+  }
+
+  &-legal {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &-privacy {
+    text-decoration: Underline
+  }
+
+  &-reserved {
+    cursor: default;
+  }
+
+}
