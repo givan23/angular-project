@@ -1,0 +1,43 @@
+.button {
+  height: auto;
+  width: 100%;
+  background-color: white;
+  border: 1px black solid;
+  margin: 5px 5px;
+  color: black;
+  cursor: pointer;
+  &:hover {
+    background-color: grey;
+  }
+  &:focus {
+    outline:none;
+  }
+}
+.off-button {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+//SKINS
+.blue-btn {
+  height: 70px;
+  box-shadow: 2px 1px 10px #494097;
+  background-color: blue;
+  border: 1px #11057b solid;
+  border-radius: 10px;
+  margin: 11px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  &:hover {
+    box-shadow: 2px 1px 20px #494097;
+    background-color: #0000ffad;
+    border: 1px #11057b solid;
+  }
+}
+.off-blue-btn:hover,
+.off-blue-btn {
+  background-color: rgba(0, 0, 255, 0.5);
+  box-shadow: none;
+  cursor: not-allowed;
+}
