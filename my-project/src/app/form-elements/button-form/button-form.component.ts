@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ButtonFormComponent implements OnInit {
- buttonTitle = 'Sign me up!';
- skinBtn = ' blue-btn';
- skinBtnOff = 'blue-btn off-blue-btn';
- buttonToggle = true;
-  constructor() { }
+  @Input() details: any;
+
+  constructor() {
+  }
 
   ngOnInit() {
+    console.log(this.details);
   }
 
 }

@@ -1,1 +1,3 @@
-<button class="button" [ngClass] = "buttonToggle ? skinBtn : skinBtnOff" type="button">{{buttonTitle}}</button>
+<button
+  class="button" [ngClass] = "details.buttonToggle ? details.skinBtn : details.skinBtnOff"
+  type="submit" [disabled]="!mapForm.valid">{{details.buttonTitle}}</button>
