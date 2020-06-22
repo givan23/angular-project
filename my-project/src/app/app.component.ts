@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {formDetail} from './model/moc/form-moc';
+import {FormModel} from './model/ts/form/form-model';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'app works!';
-  pippo = 'ciao!!';
-  myCard;
+  formDetail: FormModel;
   constructor () {
-    this.myCard = {
-      text: 'Da parent a child!!!',
-    };
+    this.formDetail = formDetail;
   }
 }

@@ -1,8 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import {formDetail} from '../model/moc/form-moc';
-import {InputModel} from '../model/ts/input-model';
-import {ButtonModel} from '../model/ts/button-model';
 
 
 @Component({
@@ -11,28 +8,21 @@ import {ButtonModel} from '../model/ts/button-model';
   styleUrls: ['./registration-form.component.less']
 })
 export class RegistrationFormComponent implements OnInit {
+  @Input() formDetail;
   mapForm;
-  inputName: InputModel;
-  inputSurname: InputModel;
-  inputMail: InputModel;
-  inputPassword: InputModel;
-  inputConfPsw: InputModel;
-  buttonDetail: ButtonModel;
+  inputName;
+  inputSurname;
+  inputMail;
+  inputPassword;
+  inputConfPsw;
+  buttonDetail;
 
   onSubmit () {
     console.warn(this.mapForm.value);
     console.warn(this.mapForm.status);
   }
 
-  constructor(private fb: FormBuilder) {
-    this.inputName = formDetail.inputDetail.inputName;
-    this.inputSurname = formDetail.inputDetail.inputSurname;
-    this.inputMail = formDetail.inputDetail.inputMail;
-    this.inputPassword = formDetail.inputDetail.inputPassword;
-    this.inputConfPsw = formDetail.inputDetail.inputConfPsw;
-    this.buttonDetail = formDetail.buttonDetail;
-
-  }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.mapForm = this.fb.group({
@@ -42,6 +32,13 @@ export class RegistrationFormComponent implements OnInit {
       password: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
       confirmPsw: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
     });
+    this.inputName = this.formDetail.inputDetail.inputName;
+    this.inputSurname = this.formDetail.inputDetail.inputSurname;
+    this.inputMail = this.formDetail.inputDetail.inputMail;
+    this.inputPassword = this.formDetail.inputDetail.inputPassword;
+    this.inputConfPsw = this.formDetail.inputDetail.inputConfPsw;
+    this.buttonDetail = this.formDetail.buttonDetail;
+
   }
 
   get name() { return this.mapForm.get('name'); }

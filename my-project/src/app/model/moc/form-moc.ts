@@ -32,7 +32,7 @@ export const formDetail = {
   },
   buttonDetail: {
     buttonTitle: 'Sign me up!',
-    skinBtn: ' blue-btn',
+    skinBtn: 'blue-btn',
     skinBtnOff: 'blue-btn off-blue-btn',
   }
 };
