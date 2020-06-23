@@ -7,7 +7,6 @@ export class FormModel {
     inputSurname: InputModel;
     inputMail: InputModel;
     inputPassword: InputModel;
-    inputConfPsw: InputModel;
   };
   buttonDetail: ButtonModel;
 }

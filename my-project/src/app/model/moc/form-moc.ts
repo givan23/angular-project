@@ -4,6 +4,7 @@ export const formDetail = {
       label: 'name',
       type: 'text',
       placeholder: 'ex. Tom',
+
     },
     inputSurname: {
       label: 'surname',
@@ -20,13 +21,7 @@ export const formDetail = {
     inputPassword: {
       label: 'password',
       type: 'password',
-      placeholder: 'minimum 8 characters and at least capital letter',
-
-    },
-    inputConfPsw: {
-      label: 'confirmPsw',
-      type: 'password',
-      placeholder: 'please confirm your password',
+      placeholder: 'ex. Jonson2020',
 
     },
   },

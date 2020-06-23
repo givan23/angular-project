@@ -18,8 +18,8 @@
         <div *ngIf="name.errors.required">
           Name is required.
         </div>
-        <div *ngIf="name.errors.minlength">
-          Name must be at least 3 characters long.
+        <div *ngIf="name.errors.nameAndSurnameValidator">
+          Name must have minimum 3 characters. Maximum 50 characters. No special characters.
         </div>
       </div>
 
@@ -38,8 +38,8 @@
         <div *ngIf="surname.errors.required">
           Surname is required.
         </div>
-        <div *ngIf="surname.errors.minlength">
-          Surname must be at least 3 characters long.
+        <div *ngIf="surname.errors.nameAndSurnameValidator">
+          Surname must have minimum 3 characters. Maximum 50 characters. No special characters.
         </div>
       </div>
 
@@ -74,29 +74,11 @@
              required>
       <div *ngIf="password.invalid && (password.dirty || password.touched)"
            class="alert alert-danger">
-
         <div *ngIf="password.errors.required">
           Password is required.
         </div>
         <div *ngIf="password.errors.pswValidator">
           Minimum 8 characters. At least 1 upper. At least 1 number. No special character.
-        </div>
-      </div>
-
-      <label class="input-label" for="{{inputConfPsw.label}}">{{inputConfPsw.label}}</label>
-      <input class="input-box"
-             [ngClass]="{'input-error': confirmPsw.invalid && (confirmPsw.dirty || confirmPsw.touched)}"
-             type="{{inputConfPsw.type}}"
-             id="{{inputConfPsw.label}}"
-             placeholder="{{inputConfPsw.placeholder}}"
-             formControlName="{{inputConfPsw.label}}"
-             maxlength="16"
-             required>
-      <div *ngIf="confirmPsw.invalid && (confirmPsw.dirty || confirmPsw.touched)"
-           class="alert alert-danger">
-
-        <div *ngIf="confirmPsw.errors.required">
-          Confirm Password is required.
         </div>
       </div>
 
@@ -106,5 +88,4 @@
   <button
     class="button" [ngClass]=" mapForm.invalid ? buttonDetail.skinBtnOff : buttonDetail.skinBtn"
     type="submit" [disabled]="mapForm.invalid">{{buttonDetail.buttonTitle}}</button>
-
 </form>

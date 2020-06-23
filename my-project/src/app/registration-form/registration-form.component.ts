@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {mailValidator, pswValidator} from './validations/validation-form';
+import {FormBuilder, Validators} from '@angular/forms';
+import {mailValidator, nameAndSurnameValidator, pswValidator} from './validations/validation-form';
 
 
 @Component({
@@ -16,7 +16,6 @@ export class RegistrationFormComponent implements OnInit {
   inputSurname;
   inputMail;
   inputPassword;
-  inputConfPsw;
   buttonDetail;
 
   onSubmit () {
@@ -27,18 +26,16 @@ export class RegistrationFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.mapForm = this.fb.group({
-      name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-      surname: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      name: ['', Validators.compose([Validators.required, nameAndSurnameValidator])],
+      surname: ['', Validators.compose([Validators.required, nameAndSurnameValidator])],
       mail: ['', Validators.compose( [Validators.required, mailValidator ])],
       password: ['', Validators.compose([Validators.required, pswValidator])],
-      confirmPsw: ['', Validators.compose([Validators.required])],
     });
 
     this.inputName = this.formDetail.inputDetail.inputName;
     this.inputSurname = this.formDetail.inputDetail.inputSurname;
     this.inputMail = this.formDetail.inputDetail.inputMail;
     this.inputPassword = this.formDetail.inputDetail.inputPassword;
-    this.inputConfPsw = this.formDetail.inputDetail.inputConfPsw;
     this.buttonDetail = this.formDetail.buttonDetail;
 
   }
@@ -47,5 +44,4 @@ export class RegistrationFormComponent implements OnInit {
   get surname() { return this.mapForm.get('surname'); }
   get mail() { return this.mapForm.get('mail'); }
   get password() { return this.mapForm.get('password'); }
-  get confirmPsw() { return this.mapForm.get('confirmPsw'); }
 }
