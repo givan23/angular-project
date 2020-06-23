@@ -58,8 +58,8 @@
         <div *ngIf="mail.errors.required">
           Mail is required.
         </div>
-        <div *ngIf="mail.errors.minlength">
-          Name must be at least 11 characters long.
+        <div *ngIf="mail.errors.mailValidator">
+          Mail non valida.
         </div>
       </div>
 
@@ -78,8 +78,8 @@
         <div *ngIf="password.errors.required">
           Password is required.
         </div>
-        <div *ngIf="password.errors.minlength">
-          Name must be at least 8 characters long.
+        <div *ngIf="password.errors.pswValidator">
+          Minimum 8 characters. At least 1 upper. At least 1 number. No special character.
         </div>
       </div>
 
@@ -97,9 +97,6 @@
 
         <div *ngIf="confirmPsw.errors.required">
           Confirm Password is required.
-        </div>
-        <div *ngIf="confirmPsw.errors.minlength">
-          Name must be at least 8 characters long.
         </div>
       </div>
 
