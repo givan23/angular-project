@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
+import {FormService} from './services/form.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { RegistrationFormComponent } from './registration-form/registration-form
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [FormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

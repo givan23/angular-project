@@ -1,4 +1,4 @@
-export class ButtonModel {
+export class ButtonType {
   buttonTitle: string;
   skinBtn: string;
   skinBtnOff: string;

@@ -1,11 +1,11 @@
 <form class="form" [formGroup]="mapForm" (ngSubmit)="onSubmit()">
 
-  <div class="input input-blue">
+  <div class="input input-blue" [ngClass]="inputDetail.skinInput">
     <div class="input-field">
 
       <label class="input-label " for="{{inputName.label}}">{{inputName.label}}</label>
       <input class="input-box"
-             [ngClass]="{'input-error': name.invalid && (name.dirty || name.touched)}"
+             [ngClass]="name.invalid && (name.dirty || name.touched) ? inputDetail.skinInputError : ''"
              type="{{inputName.type}}"
              id="{{inputName.label}}"
              placeholder="{{inputName.placeholder}}"
@@ -16,16 +16,16 @@
            class="alert alert-danger">
 
         <div *ngIf="name.errors.required">
-          Name is required.
+          {{inputName.required}}
         </div>
         <div *ngIf="name.errors.nameAndSurnameValidator">
-          Name must have minimum 3 characters. Maximum 50 characters. No special characters.
+          {{inputName.validationText}}
         </div>
       </div>
 
       <label class="input-label" for="{{inputSurname.label}}">{{inputSurname.label}}</label>
       <input class="input-box"
-             [ngClass]="{'input-error': surname.invalid && (surname.dirty || surname.touched)}"
+             [ngClass]="surname.invalid && (surname.dirty || surname.touched) ? inputDetail.skinInputError : ''"
              type="{{inputSurname.type}}"
              id="{{inputSurname.label}}"
              placeholder="{{inputSurname.placeholder}}"
@@ -36,16 +36,16 @@
            class="alert alert-danger">
 
         <div *ngIf="surname.errors.required">
-          Surname is required.
+          {{inputSurname.required}}
         </div>
         <div *ngIf="surname.errors.nameAndSurnameValidator">
-          Surname must have minimum 3 characters. Maximum 50 characters. No special characters.
+          {{inputSurname.validationText}}
         </div>
       </div>
 
       <label class="input-label" for="{{inputMail.label}}">{{inputMail.label}}</label>
       <input class="input-box"
-             [ngClass]="{'input-error': mail.invalid && (mail.dirty || mail.touched)}"
+             [ngClass]="mail.invalid && (mail.dirty || mail.touched) ? inputDetail.skinInputError : ''"
              type="{{inputMail.type}}"
              id="{{inputMail.label}}"
              placeholder="{{inputMail.placeholder}}"
@@ -56,16 +56,16 @@
            class="alert alert-danger">
 
         <div *ngIf="mail.errors.required">
-          Mail is required.
+          {{inputMail.required}}
         </div>
         <div *ngIf="mail.errors.mailValidator">
-          Mail non valida.
+          {{inputMail.validationText}}
         </div>
       </div>
 
       <label class="input-label" for="{{inputPassword.label}}">{{inputPassword.label}}</label>
       <input class="input-box"
-             [ngClass]="{'input-error': password.invalid && (password.dirty || password.touched)}"
+             [ngClass]="password.invalid && (password.dirty || password.touched) ? inputDetail.skinInputError : ''"
              type="{{inputPassword.type}}"
              id="{{inputPassword.label}}"
              placeholder="{{inputPassword.placeholder}}"
@@ -75,10 +75,10 @@
       <div *ngIf="password.invalid && (password.dirty || password.touched)"
            class="alert alert-danger">
         <div *ngIf="password.errors.required">
-          Password is required.
+          {{inputPassword.required}}
         </div>
         <div *ngIf="password.errors.pswValidator">
-          Minimum 8 characters. At least 1 upper. At least 1 number. No special character.
+          {{inputPassword.validationText}}
         </div>
       </div>
 

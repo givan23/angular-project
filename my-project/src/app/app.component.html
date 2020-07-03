@@ -1,7 +1,7 @@
 <div class="record">
   <p class="record-back">◄ Back to Home</p>
   <p class="record-title">Register to take advantage of our services</p>
-  <app-registration-form [formDetail]="formDetail"></app-registration-form>
+  <app-registration-form [formDetail]="formDetail" (userDetail)="onUserDetail($event)"></app-registration-form>
   <div class="record-legal">
     <p class="record-privacy">By clicking on Sign me up you accept the terms and conditions on the privacy law.</p>
     <p class="record-reserved">all rights reserved ©</p>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {mailValidator, nameAndSurnameValidator, pswValidator} from './validations/validation-form';
 
@@ -11,7 +11,9 @@ import {mailValidator, nameAndSurnameValidator, pswValidator} from './validation
 export class RegistrationFormComponent implements OnInit {
 
   @Input() formDetail;
+  @Output() userDetail: EventEmitter<any> = new EventEmitter();
   mapForm;
+  inputDetail;
   inputName;
   inputSurname;
   inputMail;
@@ -19,9 +21,9 @@ export class RegistrationFormComponent implements OnInit {
   buttonDetail;
 
   onSubmit () {
-    console.warn(this.mapForm.value);
-    console.warn(this.mapForm.status);
+    this.userDetail.emit(this.mapForm.value);
   }
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -32,6 +34,7 @@ export class RegistrationFormComponent implements OnInit {
       password: ['', Validators.compose([Validators.required, pswValidator])],
     });
 
+    this.inputDetail = this.formDetail.inputDetail;
     this.inputName = this.formDetail.inputDetail.inputName;
     this.inputSurname = this.formDetail.inputDetail.inputSurname;
     this.inputMail = this.formDetail.inputDetail.inputMail;
